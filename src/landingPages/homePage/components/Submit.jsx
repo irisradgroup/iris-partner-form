@@ -12,12 +12,14 @@ class Confirmation extends FormTemplate {
     window.scrollTo(0, 0);
     const formData = new FormData();
     // var api = "http://localhost:9000/.netlify/functions/api";
-    var api = "https://iris-form-backend.netlify.app/.netlify/functions/api";
-    api += "/sendEmail";
-
+    var api = "http://127.0.0.1:8000/api/send_partner/";
+    const formArr = [];
+    this.props.formContent.forEach((content) =>{
+      formArr.push(...content.formContent);
+    });
     Object.keys(this.props.data).map((field) =>
       Object.keys(this.props.data[field]).map((key) => {
-        formData.append(key, this.props.data[field][key]);
+        formData.append(formArr.find(form=> form.variableName === key).title, this.props.data[field][key]);
       })
     );
 

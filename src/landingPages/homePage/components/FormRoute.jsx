@@ -156,7 +156,7 @@ class FormRoute extends Component {
       {
         id: formContent.length + 1,
         label: "Submit & Print",
-        Component: <Submit data={this.state.data} />,
+        Component: <Submit data={this.state.data} formContent={formContent} />,
       }
     );
 
