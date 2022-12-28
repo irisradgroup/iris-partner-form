@@ -11,8 +11,7 @@ class Confirmation extends FormTemplate {
   componentDidMount() {
     window.scrollTo(0, 0);
     const formData = new FormData();
-    // var api = "http://localhost:9000/.netlify/functions/api";
-    var api = "http://127.0.0.1:8000/api/send_partner/";
+    var api = "https://irisgo.api.irisradgroup.com/api/send_partner/";
     const formArr = [];
     this.props.formContent.forEach((content) =>{
       formArr.push(...content.formContent);
